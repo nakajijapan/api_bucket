@@ -15,50 +15,50 @@ describe "ApiBucket::Itunes" do
 
     it 'item in response is ApiBucket::Itunes::Item' do
       service = ApiBucket::Itunes::Client.new
-      service.search('ruby').items[0].class.should == ApiBucket::Itunes::Item
+      expect(service.search('ruby').items[0].class).to eq ApiBucket::Itunes::Item
     end
 
     it 'can search items' do
       service = ApiBucket::Itunes::Client.new
       response = service.search(Keywords: 'ruby')
-      response.items.should have_at_least(2).items
+      expect(response.items.count).to be > 2
     end
 
     it 'is invalid setting' do
       service = ApiBucket::Itunes::Client.new
-      service.search(nil).items.should be_empty
+      expect(service.search(nil).items).to be_empty
     end
   end
 
   describe '#lookup' do
     before(:all) do
       service = ApiBucket::Itunes::Client.new
-      @response = service.lookup('332209930', {})
+      @response = service.lookup('332209930')
     end
 
     it 'is invalid setting' do
       service = ApiBucket::Itunes::Client.new
-      service.lookup(nil, {}).items.first.should be_nil
+      expect(service.lookup(nil).items.first).to be_nil
     end
 
     it 'can lookup item' do
-      @response.items.should have_at_most(1).items
+      expect(@response.items.count).to eq 1
     end
 
     it 'can get product_code' do
-      @response.items.first.product_code.should match(/[a-zA-Z1-9]+/)
+      expect(@response.items.first.product_code).to match(/[a-zA-Z1-9]+/)
     end
 
     it 'can get detail_url' do
-      @response.items.first.detail_url.should match(/[a-zA-Z1-9:\/]+/)
+      expect(@response.items.first.detail_url).to match(/[a-zA-Z1-9:\/]+/)
     end
 
     it 'can get images' do
-      @response.items.first.image.should have(3).items
+      expect(@response.items.first.image.count).to be > 2
     end
 
     it 'can get image' do
-      @response.items.first.image[:l][:url].should match(/[a-zA-Z1-9:\/]+/)
+      expect(@response.items.first.image[:l][:url]).to match(/[a-zA-Z1-9:\/]+/)
     end
 
   end
