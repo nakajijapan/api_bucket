@@ -8,7 +8,6 @@ require 'api_bucket/rakuten/item'
 require 'api_bucket/rakuten/response'
 require 'api_bucket/rakuten/client'
 
-# ApiBucket::Rakuten
 module ApiBucket::Rakuten
   extend Configuration
 end

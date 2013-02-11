@@ -53,13 +53,13 @@ module ApiBucket
 
       case type
       when :amazon
-        service = ApiBucket::Amazon::Base.new
+        service = ApiBucket::Amazon::Client.new
       when :yahooauction
-        service = ApiBucket::Yahooauction::Base.new
+        service = ApiBucket::Yahooauction::Client.new
       when :rakuten
-        service = ApiBucket::Rakuten::Base.new
+        service = ApiBucket::Rakuten::Client.new
       when :itunes
-        service = ApiBucket::Itunes::Base.new
+        service = ApiBucket::Itunes::Client.new
       when :frustration
       else
         raise ArgumentError, 'no api module'

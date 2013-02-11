@@ -11,7 +11,7 @@ describe "ApiBucket" do
   context 'when we select Amazon ECS' do
     describe 'ApiBucket::Service' do
       it 'can get instance' do
-        ApiBucket::Service::instance(:amazon).should be_a_kind_of(ApiBucket::Amazon::Base)
+        ApiBucket::Service::instance(:amazon).should be_a_kind_of(ApiBucket::Amazon::Client)
       end
 
       it 'can get service code(string)' do
@@ -31,7 +31,7 @@ describe "ApiBucket" do
   context 'when we select iTunes' do
     describe 'ApiBucket::Service' do
       it 'can get instance' do
-        ApiBucket::Service::instance(:itunes).should be_a_kind_of(ApiBucket::Itunes::Base)
+        ApiBucket::Service::instance(:itunes).should be_a_kind_of(ApiBucket::Itunes::Client)
       end
 
       it 'can get service code(string)' do
@@ -51,7 +51,7 @@ describe "ApiBucket" do
   context 'when we select Rakuten' do
     describe 'ApiBucket::Service' do
       it 'can get instance' do
-        ApiBucket::Service::instance(:rakuten).should be_a_kind_of(ApiBucket::Rakuten::Base)
+        ApiBucket::Service::instance(:rakuten).should be_a_kind_of(ApiBucket::Rakuten::Client)
       end
 
       it 'can get service code(string)' do
@@ -71,7 +71,7 @@ describe "ApiBucket" do
   context 'when we select Yahooauction' do
     describe 'ApiBucket::Service' do
       it 'can get instance' do
-        ApiBucket::Service::instance(:yahooauction).should be_a_kind_of(ApiBucket::Yahooauction::Base)
+        ApiBucket::Service::instance(:yahooauction).should be_a_kind_of(ApiBucket::Yahooauction::Client)
       end
 
       it 'can get service code(string)' do
