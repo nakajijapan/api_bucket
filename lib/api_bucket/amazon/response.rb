@@ -1,5 +1,7 @@
+require "api_bucket/base/response"
+
 module ApiBucket::Amazon
-  class Response < ApiBucket::Response
+  class Response < ApiBucket::Base::Response
     def items
       @items ||= (@doc/"Item").collect { |item| ApiBucket::Amazon::Item.new(item) }
     end

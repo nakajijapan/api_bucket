@@ -1,6 +1,8 @@
 # coding: utf-8
+require "api_bucket/base/item"
+
 module ApiBucket::Rakuten
-  class Item < ApiBucket::Item
+  class Item < ApiBucket::Base::Item
 
     def initialize(element)
       @product_code = element['itemCode']

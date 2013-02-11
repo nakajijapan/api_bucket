@@ -1,5 +1,8 @@
+# coding: utf-8
+require "api_bucket/base/item"
+
 module ApiBucket::Amazon
-  class Item < ApiBucket::Item
+  class Item < ApiBucket::Base::Item
     def initialize(element)
       #@element = element
       @element = ApiBucket::Element.new(element)

@@ -1,5 +1,7 @@
+require "api_bucket/base/response"
+
 module ApiBucket::Yahooauction
-  class Response < ApiBucket::Response
+  class Response < ApiBucket::Base::Response
 
     def initialize(xml)
       @doc = xml
