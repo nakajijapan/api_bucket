@@ -9,7 +9,6 @@ module ApiBucket::Rakuten
     attr_accessor :page, :limit, :format, :application_id, :affiliate_id
 
     REQUEST_URL      = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20120723'
-    REQUEST_URL_ITEM = 'http://api.rakuten.co.jp/rws/3.0/json'
 
     def categories
       {
