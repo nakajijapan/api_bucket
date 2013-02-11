@@ -1,11 +1,11 @@
 # coding: utf-8
 require "api_bucket/base/item"
+require "api_bucket/base/element"
 
 module ApiBucket::Amazon
   class Item < ApiBucket::Base::Item
     def initialize(element)
-      #@element = element
-      @element = ApiBucket::Element.new(element)
+      @element = ApiBucket::Base::Element.new(element)
 
       @product_code = @element.get('ASIN')
       @detail_url = @element.get('DetailPageURL')

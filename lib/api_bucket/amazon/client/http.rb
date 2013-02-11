@@ -3,7 +3,6 @@ module ApiBucket::Amazon
     module Http
       def send_request(options)
         request_url = "#{REQUEST_URL}?#{self.prepare_query(options)}"
-
         uri = URI::parse(request_url)
         res = Net::HTTP.get_response(uri)
         res.body
