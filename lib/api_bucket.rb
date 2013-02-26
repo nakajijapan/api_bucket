@@ -29,6 +29,11 @@ require 'net/http'
 require 'hmac-sha2'
 require 'base64'
 require "api_bucket/version"
+require 'api_bucket/amazon'
+require 'api_bucket/rakuten'
+require 'api_bucket/yahooauction'
+require 'api_bucket/itunes'
+
 
 # ApiBucket
 module ApiBucket
