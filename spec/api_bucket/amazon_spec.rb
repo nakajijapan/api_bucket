@@ -30,6 +30,15 @@ describe "ApiBucket::Amazon" do
       service = ApiBucket::Amazon::Client.new
       expect(service.search(nil).items).to be_empty
     end
+
+    context 'when add options' do
+      it 'can search items' do
+        service = ApiBucket::Amazon::Client.new
+        response = service.search('ruby', {search_index: 'All'})
+        expect(response.items.count).to be > 2
+      end
+    end
+
   end
 
   describe '#lookup' do

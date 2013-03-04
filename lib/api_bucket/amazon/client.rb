@@ -9,7 +9,7 @@ module ApiBucket::Amazon
 
     def categories
       {
-        ALL:            'All',
+        All:            'All',
         DVD:            'DVD / BD',
         Books:          'Books',
         ForeignBooks:   'ForeignBooks',
