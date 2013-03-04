@@ -9,8 +9,9 @@ module ApiBucket::Amazon
 
     def categories
       {
-        ALL:            '----',
+        ALL:            'All',
         DVD:            'DVD / BD',
+        Books:          'Books',
         ForeignBooks:   'ForeignBooks',
         VideoGames:     'VideoGames',
         Music:          'Music',
@@ -18,6 +19,7 @@ module ApiBucket::Amazon
         Electronics:    'Electronics',
         Watches:        'Watches',
         KindleStore:    'KindleStore',
+        Grocery:        'Grocery',
       }
     end
 
