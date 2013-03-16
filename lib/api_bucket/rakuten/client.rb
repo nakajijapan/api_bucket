@@ -12,7 +12,7 @@ module ApiBucket::Rakuten
 
     def categories
       {
-        :ALL => '----',
+        :ALL      => 'ALL',
         :'101240' => 'CD・DVD/BD・楽器',
 
         :'100371' => 'レディースファッション',
@@ -58,7 +58,7 @@ module ApiBucket::Rakuten
       # delete no needed keys
       options.delete(:keywords)
       options.delete(:search_index)
-      options[:genreId] = '0' if options[:genreId] == 'All'
+      options[:genreId] = '0' if options[:genreId] == 'ALL'
 
       ApiBucket::Rakuten::Response.new(send_request(options, REQUEST_URL))
     end
