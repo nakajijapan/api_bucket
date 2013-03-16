@@ -21,7 +21,7 @@ module ApiBucket::Rakuten
       }
 
       keys.each do |key, image_key|
-        if element[image_key]
+        if element.has_key?(image_key) and element[image_key].present?
           matches             = element[image_key].first['imageUrl'].match(/(.+)\?_ex=(\d+)x(\d+)/)
           image_url_no_params = matches[1]
           size                = matches[2]
