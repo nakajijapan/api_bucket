@@ -1,6 +1,9 @@
 # ApiBucket
 
+[![Gem Version](https://badge.fury.io/rb/api_bucket.png)](http://badge.fury.io/rb/api_bucket)
+
 We can use sevral APIs with common interface.
+
 
 * APIs
   * Amazon ECS
