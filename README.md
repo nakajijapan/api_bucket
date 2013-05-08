@@ -33,14 +33,14 @@ Or install it yourself as:
 require 'api_bucket'
 require 'api_bucket/amazon'
 
-ApiBucket::Amazon::Client.configure do |o|
+ApiBucket::Amazon.configure do |o|
     o.a_w_s_access_key_id = 'hogehoge'
     o.a_w_s_secret_key    = 'mogemoge'
     o.associate_tag       = 'nakajijapan'
 end
 
 service = ApiBucket::Service::instance(:amazon)
-res = service.item_search('ruby')
+res = service.search('ruby')
 
 res.items.each do |item|
   p item.product_code
