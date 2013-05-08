@@ -29,6 +29,8 @@ Or install it yourself as:
 
 ### use Amazon
 
+* search items
+
 ```ruby
 require 'api_bucket'
 require 'api_bucket/amazon'
@@ -46,6 +48,26 @@ res.items.each do |item|
   p item.product_code
   p item.title
 end
+```
+
+* lookup item
+
+```ruby
+require 'api_bucket'
+require 'api_bucket/amazon'
+
+ApiBucket::Amazon.configure do |o|
+    o.a_w_s_access_key_id = 'hogehoge'
+    o.a_w_s_secret_key    = 'mogemoge'
+    o.associate_tag       = 'nakajijapan'
+end
+
+service = ApiBucket::Service::instance(:amazon)
+res = service.lookup('p1234567890')
+
+p res.first_item.product_code
+p res.first_item.title
+
 ```
 
 ## Contributing
