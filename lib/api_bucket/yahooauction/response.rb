@@ -10,8 +10,8 @@ module ApiBucket::Yahooauction
     def items
       return [] if @doc.nil?
 
-      if @doc['ResultSet']["Result"]['Item']
-        @items ||= @doc['ResultSet']["Result"]['Item'].map {|item| ApiBucket::Yahooauction::Item.new(item) }
+      if @doc['ResultSet']['Result']['Item']
+        @items ||= @doc['ResultSet']['Result']['Item'].map {|item| ApiBucket::Yahooauction::Item.new(item) }
       else
         @items = [ApiBucket::Yahooauction::Item.new(@doc['ResultSet']['Result'])]
       end
